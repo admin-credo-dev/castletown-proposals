@@ -23,6 +23,11 @@
   .lede { text-align:center; color:var(--muted); font-size:18px; margin:0 0 28px; }
   .frame { position:relative; width:100%; aspect-ratio:16/9; min-height:420px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.12); background:#111; }
   .frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .teaser { max-width:720px; margin:0 auto 36px; }
+  .teaser .yt { position:relative; width:100%; aspect-ratio:16/9; border-radius:16px; overflow:hidden; background:#000; }
+  .teaser iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .teaser p { text-align:center; color:var(--muted); font-size:14px; margin:8px 0 0; }
+  h2 { text-align:center; font-size:22px; margin:0 0 12px; }
   .why { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:32px; }
   .why div { border:1px solid var(--line); border-radius:12px; padding:16px; }
   .why b { display:block; color:var(--blue); margin-bottom:4px; }
@@ -38,10 +43,19 @@
   <nav><span>Products</span><span>Need A Lot?</span><span>Contact Us</span><span class="on">Watch</span></nav>
 </header>
 <main>
+  <section class="teaser">
+    <h2>The Tiny Saints Show: Carlo Acutis</h2>
+    <div class="yt">
+      <iframe src="https://www.youtube-nocookie.com/embed/IFSMfBMfsQw" title="The Tiny Saints Show | Carlo Acutis Teaser"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p>Teaser from Tiny Saints on YouTube.</p>
+  </section>
+  <h2>Then watch the full film</h2>
   <h1>Carlo Acutis: Roadmap to Reality</h1>
   <p class="lede">Watch the film right here. Rent or buy in a few taps, with just your email.</p>
   <div class="frame">
-    <iframe src="https://dev.watchcredo.com/embed/carlo-acutis?outreach=m4504a0qtrp6"
+    <iframe src="https://dev.watchcredo.com/embed/carlo-acutis?outreach=m4504a0qtrp6&amp;theme=light&amp;accent=00A0E9"
       title="Carlo Acutis: Roadmap to Reality on Credo"
       allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
   </div>
