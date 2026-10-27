@@ -43,9 +43,22 @@
   <h1>Watch the pilot</h1>
   <p class="lede">It’s Carlo Acutis’s first day on the job at Intercession Station. Rent or buy in a few taps, with just your email.</p>
   <div class="frame">
-    <iframe src="https://dev.watchcredo.com/embed/the-tiny-saints-show-pilot?outreach=m4504a0qtrp6&amp;theme=light&amp;accent=00A0E9"
-      title="The Tiny Saints Show: Pilot"
+    <iframe id="player" title="The Tiny Saints Show: Pilot"
       allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <script>
+      // Campaign tags: this page's own utm_* tags go onto the player link, so a link
+      // like …/tinysaints-demo/?utm_source=newsletter&utm_campaign=launch is credited
+      // to that campaign. Without tags, the sale is marked as coming from this demo.
+      (function () {
+        var src = new URL("https://dev.watchcredo.com/embed/the-tiny-saints-show-pilot?outreach=m4504a0qtrp6&theme=light&accent=00A0E9");
+        var page = new URLSearchParams(location.search);
+        var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+        var tagged = keys.some(function (k) { return page.get(k); });
+        if (tagged) keys.forEach(function (k) { if (page.get(k)) src.searchParams.set(k, page.get(k)); });
+        else { src.searchParams.set("utm_source", "demo-page"); src.searchParams.set("utm_campaign", "tiny-saints-pilot"); }
+        document.getElementById("player").src = src.toString();
+      })();
+    </script>
   </div>
   <details class="try">
     <summary>Trying it yourself?</summary>
